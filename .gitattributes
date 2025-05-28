@@ -1,0 +1,12 @@
+## Normalize all text files to LF on commit
+* text=auto eol=lf
+
+# Mark common binaries so Git skips text normalization and diffs
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.pdf     binary
+*.pkl     binary
+*.db      binary
+*.h5      binary
+*.pth     binary
