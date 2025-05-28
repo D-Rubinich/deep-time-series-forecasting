@@ -1,0 +1,44 @@
+#Uses python==3.11.9 installed with pytorch image in .devcontainer
+
+# Core Libraries
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+scipy==1.14.1
+
+# Time Series
+darts==0.32.0
+u8darts[all]==0.32.0
+statsmodels==0.14.4
+prophet==1.1.6
+pytorch-forecasting==1.1.1
+torchinfo==1.8.0
+
+# Optuna
+optuna==4.0.0
+optuna-integration[pytorch_lightning]==4.1.0
+optuna-dashboard==0.17.0
+
+# Visualization
+matplotlib==3.9.2
+seaborn==0.13.2
+plotly==5.24.1
+
+# Utilities
+python-dotenv==1.0.1
+tensorboard==2.18.0
+joblib==1.4.2
+tqdm==4.66.5
+pytest==8.3.3
+flake8==7.1.1
+openpyxl==3.1.5
+pyxlsb==1.0.10
+tzlocal==5.2
+
+# jupyter support
+jupyterlab==4.2.5
+ipykernel==6.29.5
+ipywidgets==8.1.5
+nbconvert==7.16.4
+
+
