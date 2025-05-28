@@ -1,0 +1,19 @@
+backtest_date,model,window,base_date,retrained,forecast_start,forecast_end,avg_wape_across_periods,wape_per_period,model_hyperparameters
+20250322_1741,AutoARIMA,0,2018-10-01,True,2018-11-01,2019-01-01,0.498688,"[0.474679, 0.548952, 0.472433]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,AutoARIMA,1,2018-11-01,True,2018-12-01,2019-02-01,0.422968,"[0.454932, 0.40443, 0.409543]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,AutoARIMA,2,2018-12-01,True,2019-01-01,2019-03-01,0.367971,"[0.34145, 0.374945, 0.387517]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,AutoARIMA,3,2019-01-01,True,2019-02-01,2019-04-01,0.373432,"[0.338213, 0.364186, 0.417897]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,AutoARIMA,4,2019-02-01,True,2019-03-01,2019-05-01,0.37103,"[0.352038, 0.386383, 0.374668]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,AutoARIMA,5,2019-03-01,True,2019-04-01,2019-06-01,0.390931,"[0.364335, 0.365247, 0.443212]","{'season_length': 12, 'start_p': 1, 'start_q': 1, 'stepwise': True, 'max_order': 20, 'seasonal': True}"
+20250322_1741,ExponentialSmoothing,0,2018-10-01,True,2018-11-01,2019-01-01,0.48388,"[0.455972, 0.534445, 0.461224]",{'season_length': 12}
+20250322_1741,ExponentialSmoothing,1,2018-11-01,True,2018-12-01,2019-02-01,0.416925,"[0.452174, 0.404035, 0.394566]",{'season_length': 12}
+20250322_1741,ExponentialSmoothing,2,2018-12-01,True,2019-01-01,2019-03-01,0.38155,"[0.374247, 0.391022, 0.37938]",{'season_length': 12}
+20250322_1741,ExponentialSmoothing,3,2019-01-01,True,2019-02-01,2019-04-01,0.38012,"[0.359304, 0.365243, 0.415812]",{'season_length': 12}
+20250322_1741,ExponentialSmoothing,4,2019-02-01,True,2019-03-01,2019-05-01,0.365692,"[0.342778, 0.393175, 0.361123]",{'season_length': 12}
+20250322_1741,ExponentialSmoothing,5,2019-03-01,True,2019-04-01,2019-06-01,0.385643,"[0.380801, 0.356164, 0.419964]",{'season_length': 12}
+20250322_1741,Prophet,0,2018-10-01,True,2018-11-01,2019-01-01,0.643915,"[0.613258, 0.6485, 0.669986]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
+20250322_1741,Prophet,1,2018-11-01,True,2018-12-01,2019-02-01,0.648581,"[0.642447, 0.658882, 0.644414]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
+20250322_1741,Prophet,2,2018-12-01,True,2019-01-01,2019-03-01,0.649155,"[0.642106, 0.625551, 0.679809]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
+20250322_1741,Prophet,3,2019-01-01,True,2019-02-01,2019-04-01,0.642054,"[0.609576, 0.670468, 0.646118]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
+20250322_1741,Prophet,4,2019-02-01,True,2019-03-01,2019-05-01,0.645494,"[0.654805, 0.627107, 0.65457]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
+20250322_1741,Prophet,5,2019-03-01,True,2019-04-01,2019-06-01,0.680439,"[0.616417, 0.642951, 0.781949]","{'seasonality_mode': 'additive', 'yearly_seasonality': True}"
