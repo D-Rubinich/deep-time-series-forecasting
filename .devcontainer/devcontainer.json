@@ -1,0 +1,69 @@
+{
+    "name": "Time_Series_Dev",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": ["--gpus", "all"],
+    
+    "containerEnv": {
+        "PYTHONPATH": "${containerWorkspaceFolder}"
+    },
+    
+    "forwardPorts": [6006,6007, 8080, 8081],
+    "portsAttributes": {
+        "6006": {
+            "label": "TensorBoard",
+            "onAutoForward": "notify"
+        },
+        "6007": {
+            "label": "TensorBoard Alt",
+            "onAutoForward": "notify"
+        },
+        "8080": {
+            "label": "Optuna Dashboard",
+            "onAutoForward": "notify"
+        },
+        "8081": {
+            "label": "Optuna Dashboard Alt",
+            "onAutoForward": "notify"
+        }
+    },
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "python.pythonPath": "/opt/conda/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "jupyter.jupyterServerType": "local",
+                "python.interpreter.infoVisibility": "always"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-azuretools.vscode-docker",
+                "ms-toolsai.tensorboard",
+                "Optuna.optuna-dashboard",
+                "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+                "streetsidesoftware.code-spell-checker",
+                "njpwerner.autodocstring",
+                "ms-toolsai.datawrangler",
+                "GrapeCity.gc-excelviewer",
+                "shd101wyy.markdown-preview-enhanced"
+            ]
+        }
+    },
+    
+
+
+    "postCreateCommand": "python setup_paths.py",
+    "remoteUser": "vscode"
+}
+
+
+
+

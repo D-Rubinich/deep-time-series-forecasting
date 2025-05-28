@@ -1,0 +1,38 @@
+# Dockerfile for PyTorch development
+FROM pytorch/pytorch:2.4.1-cuda12.4-cudnn9-runtime
+
+# Install additional packages
+RUN apt-get update && apt-get install -y git sudo wget && rm -rf /var/lib/apt/lists/*
+
+# Set CUDA environment variables for version 12.4
+ENV CUDA_HOME=/usr/local/cuda-12.4
+ENV PATH=$CUDA_HOME/bin:$PATH
+ENV LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+
+# Set the working directory
+WORKDIR /workspace
+
+# Create a non-root user
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Create and set permissions for src, data and logs
+RUN mkdir -p /workspace/src /workspace/data /workspace/logs \
+    && chown -R $USERNAME:$USERNAME /workspace/src /workspace/data /workspace/logs \
+    && chmod -R 755 /workspace/src /workspace/data /workspace/logs
+
+# Switch to non-root user
+USER $USERNAME
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
